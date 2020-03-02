@@ -49,5 +49,5 @@ spec:
             failureThreshold: 3
           resources:
             limits:
-              cpu: "0.2" 
+              cpu: "0.1" 
               memory: "512Mi"
