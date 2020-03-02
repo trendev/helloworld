@@ -1,10 +1,10 @@
 'use strict';
 
 const express = require('express');
+const morgan = require('morgan');
 var os = require("os");
 
 const app = express();
-const port = 9000;
 
 function getNetworkInterfaces(ifaces) {
 
@@ -28,6 +28,8 @@ function getNetworkInterfaces(ifaces) {
 
 }
 
+app.use(morgan("dev"));
+
 app.get('/health', (req, res) => res.send(
     {
         status: 'ok',
@@ -43,4 +45,5 @@ app.get('/', (req, res) => res.send({
     timestamp: new Date().getTime()
 }));
 
+const port = process.env.PORT || 9000;
 app.listen(port, () => console.log(`NodeJS server listening on port ${port}`));
