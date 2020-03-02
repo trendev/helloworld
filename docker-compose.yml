@@ -1,0 +1,8 @@
+version: "3"
+services:
+  helloworld:
+    build: .
+    image: trendev/helloworld
+    container_name: helloworld
+    ports:
+      - 9000:9000

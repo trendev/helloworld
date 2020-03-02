@@ -1,7 +1,9 @@
-const express = require('express')
-const app = express()
-const port = 9000
+'use strict';
 
-app.get('/', (req, res) => res.send('Hello World!'))
+const express = require('express');
+const app = express();
+const port = 9000;
 
-app.listen(port, () => console.log(`Server listening on port ${port}!`))
+app.get('/', (req, res) => res.send('Hello World !!!\n'));
+
+app.listen(port, () => console.log(`NodeJS server listening on port ${port}`));
