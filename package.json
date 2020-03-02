@@ -1,0 +1,29 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "description": "simple helloworld example build on NodeJS &amp; Kubernetes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trendev/helloworld.git"
+  },
+  "keywords": [
+    "helloworld",
+    "NodeJS",
+    "Kubernetes",
+    "Docker",
+    "TRENDev"
+  ],
+  "author": "Julien SIE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trendev/helloworld/issues"
+  },
+  "homepage": "https://github.com/trendev/helloworld#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
