@@ -17,7 +17,7 @@
     "Docker",
     "TRENDev"
   ],
-  "author": "Julien SIE",
+  "author": "Julien SIE <jsie@trendev.fr>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/trendev/helloworld/issues"
