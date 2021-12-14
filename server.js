@@ -10,11 +10,9 @@ function getNetworkInterfaces(ifaces) {
 
     const addresses = [];
 
-    //TODO : inject POD_IP
+    Object.keys(ifaces).forEach((name) => {
 
-    Object.keys(ifaces).forEach(function (name) {
-
-        ifaces[name].forEach(function (iface) {
+        ifaces[name].forEach((iface) => {
             if ('IPv4' === iface.family
                 && !iface.internal) {
                 const o = {};
@@ -33,7 +31,7 @@ app.use(morgan("dev"));
 app.get('/health', (req, res) => res.send(
     {
         status: 'ok',
-        message: 'we are up and running'
+        message: 'we are up and running 😘'
     }
 ));
 
