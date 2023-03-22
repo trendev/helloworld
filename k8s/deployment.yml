@@ -16,7 +16,7 @@ spec:
         app: helloworld
     spec:
       containers:
-        - image: trendev/helloworld
+        - image: ghcr.io/trendev/helloworld
           imagePullPolicy: Always
           name: helloworld
           ports:
