@@ -7,7 +7,7 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-and-push-image:
+  build_and_push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -29,6 +29,12 @@ jobs:
         uses: docker/metadata-action@v4.3.0
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=schedule
+            type=raw,value=latest,enable=${{ endsWith(GitHub.ref, 'master') }}
+            type=raw,event=branch,value={{branch}}
+            type=semver,pattern={{raw}}
+            type=sha,format=long
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v4.0.0
@@ -37,3 +43,5 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache
+          cache-to: type=registry,ref=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:buildcache,mode=max
