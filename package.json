@@ -25,6 +25,6 @@
   "homepage": "https://github.com/trendev/helloworld#readme",
   "dependencies": {
     "express": "^4.21.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.1"
   }
 }
