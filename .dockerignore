@@ -1,0 +1,7 @@
+node_modules
+test
+.git
+.github
+k8s
+docker-compose.yml
+Dockerfile

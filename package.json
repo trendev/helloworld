@@ -1,11 +1,12 @@
 {
   "name": "helloworld",
   "version": "1.0.0",
-  "description": "simple helloworld example build on NodeJS &amp; Kubernetes",
+  "description": "simple helloworld example build on NodeJS & Kubernetes",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --test",
+    "test:coverage": "node --test --experimental-test-coverage"
   },
   "repository": {
     "type": "git",
@@ -24,8 +25,14 @@
     "url": "https://github.com/trendev/helloworld/issues"
   },
   "homepage": "https://github.com/trendev/helloworld#readme",
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "express": "^5.2.1",
-    "morgan": "^1.10.1"
+    "morgan": "^1.11.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.2.2"
   }
 }

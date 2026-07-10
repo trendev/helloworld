@@ -2,7 +2,7 @@
 
 const express = require('express');
 const morgan = require('morgan');
-var os = require("os");
+const os = require("os");
 
 const app = express();
 
@@ -43,5 +43,9 @@ app.get('/', (req, res) => res.send({
     timestamp: new Date().getTime()
 }));
 
-const port = process.env.PORT || 9000;
-app.listen(port, () => console.log(`NodeJS server listening on port ${port}`));
+if (require.main === module) {
+    const port = process.env.PORT || 9000;
+    app.listen(port, () => console.log(`NodeJS server listening on port ${port}`));
+}
+
+module.exports = { app, getNetworkInterfaces };
